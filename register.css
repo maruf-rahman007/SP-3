@@ -88,10 +88,7 @@ body {
   .form-footer a:hover {
     text-decoration: underline;
   }
-  .btn {
-    color: white; /* Makes the text white */
-    text-decoration: none; /* Removes underline */
-}
+  
   /* Back Arrow Styles */
   .back-arrow {
     position: absolute;
