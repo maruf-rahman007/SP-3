@@ -1,0 +1,150 @@
+/* Theme Colors */
+:root {
+    --primary-color: #7c3aed;
+    --secondary-color: #4f46e5;
+    --accent-color: #3b82f6;
+    --text-color: #333;
+    --bg-color: #f4f4f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.team-section {
+    margin-top: 2rem;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;  /* Center the items horizontally */
+    align-items: center;      /* Center the items vertically */
+    flex-wrap: wrap;          /* Allow the cards to wrap on smaller screens */
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    margin: 1rem;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-back {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1rem;
+    text-align: center;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.flip-card-front h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.flip-card-front .position {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.flip-card-back h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .flip-card {
+        width: 200px; /* Adjust card size for smaller screens */
+        margin-bottom: 1.5rem;
+    }
+}

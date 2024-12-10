@@ -1,11 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkHive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggles = document.querySelectorAll("[data-toggle]");
+      toggles.forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const target = document.getElementById(toggle.dataset.toggle);
+          if (target) {
+            target.classList.toggle("hidden");
+          }
+        });
+      });
+    });
+  </script>
 </head>
-<body>
-    
+
+<body class="min-h-screen bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+    <header class="p-4 md:p-6 bg-gradient-to-r from-purple-300 via-pink-300 to-orange-300">
+        <div class="container mx-auto flex justify-between items-center">
+          <h1 class="text-2xl md:text-3xl font-bold text-purple-600">
+            <a href="/">LinkHive</a>
+          </h1>
+          <nav class="hidden md:flex space-x-6">
+            <a href="#plans" class="hover:text-purple-600 transition-colors">Plans</a>
+            <a href="about.html" class="hover:text-purple-600 transition-colors">Team</a>
+            <a href="#faq" class="hover:text-purple-600 transition-colors">FAQ</a>
+          </nav>
+          <button class="hidden md:block bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition-colors">
+            <a href="login.html">Get Started</a>
+          </button>
+          <button class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </header>
+  <!-- Hero Section -->
+  <section class="container mx-auto px-4 py-16 text-center">
+    <h2 class="text-4xl font-bold mb-6">One Card for All Your Content</h2>
+    <p class="text-xl mb-8 max-w-2xl mx-auto">
+      LinkHive helps you organize and share all your online profiles, projects, and content in one convenient link.
+    </p>
+    <button class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-purple-100 transition-colors">
+      <a href="login.html">Create Your LinkHive</a>
+    </button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="bg-white text-purple-800 py-16">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-12 text-center">Why Choose LinkHive?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-purple-100 p-6 rounded-lg">
+          <h4 class="text-xl font-semibold mb-4">Easy to Use</h4>
+          <p>Set up your LinkHive in minutes with our intuitive interface.</p>
+        </div>
+        <div class="bg-purple-100 p-6 rounded-lg">
+          <h4 class="text-xl font-semibold mb-4">Customizable</h4>
+          <p>Personalize your page to match your brand and style.</p>
+        </div>
+        <div class="bg-purple-100 p-6 rounded-lg">
+          <h4 class="text-xl font-semibold mb-4">Analytics</h4>
+          <p>Track your link performance with detailed insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="plans" class="py-16 bg-purple-50">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-12 text-center text-purple-800">Choose Your Plan</h3>
+      <div class="flex flex-col md:flex-row justify-center items-stretch space-y-8 md:space-y-0 md:space-x-8">
+        <div class="bg-white text-purple-800 p-6 rounded-lg shadow-lg flex flex-col justify-between w-full md:w-1/3">
+          <div>
+            <h4 class="text-2xl font-bold mb-4 text-center">Basic</h4>
+            <p class="text-3xl font-semibold mb-6 text-center">Free</p>
+            <ul>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> 1 custom card
+              </li>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Basic analytics
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2 text-green-500">&#10003;</span> Standard support
+              </li>
+            </ul>
+          </div>
+          <button class="w-full bg-purple-600 text-white px-4 py-2 mt-6 rounded-full font-semibold hover:bg-purple-700 transition-colors">
+            <a href="login.html">Choose Plan</a>
+          </button>
+        </div>
+        <div class="bg-white text-purple-800 p-6 rounded-lg shadow-lg flex flex-col justify-between w-full md:w-1/3">
+          <div>
+            <h4 class="text-2xl font-bold mb-4 text-center">Pro</h4>
+            <p class="text-3xl font-semibold mb-6 text-center">$9.99/mo</p>
+            <ul>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Unlimited custom links
+              </li>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Advanced analytics
+              </li>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Priority support
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2 text-green-500">&#10003;</span> Custom domains
+              </li>
+            </ul>
+          </div>
+          <button disabled class="w-full bg-purple-600 text-white px-4 py-2 mt-6 rounded-full font-semibold hover:bg-purple-700 transition-colors"  class="w-full bg-purple-600 text-white px-4 py-2 mt-6 rounded-full font-semibold hover:bg-purple-700 transition-colors">
+            Coming Soon
+          </button>
+        </div>
+        <div class="bg-white text-purple-800 p-6 rounded-lg shadow-lg flex flex-col justify-between w-full md:w-1/3">
+          <div>
+            <h4 class="text-2xl font-bold mb-4 text-center">Business</h4>
+            <p class="text-3xl font-semibold mb-6 text-center">$29.99/mo</p>
+            <ul>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Everything in Pro
+              </li>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> Team collaboration
+              </li>
+              <li class="flex items-center mb-2">
+                <span class="mr-2 text-green-500">&#10003;</span> API access
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2 text-green-500">&#10003;</span> Dedicated account manager
+              </li>
+            </ul>
+          </div>
+          <button disabled class="w-full bg-purple-600 text-white px-4 py-2 mt-6 rounded-full font-semibold hover:bg-purple-700 transition-colors"  class="w-full bg-purple-600 text-white px-4 py-2 mt-6 rounded-full font-semibold hover:bg-purple-700 transition-colors">
+            Coming Soon
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="bg-white text-purple-800 py-16">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h3>
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-4">
+          <button data-toggle="faq1" class="p-4 bg-purple-100 w-full text-left font-semibold rounded-lg">
+            What is LinkHive?
+          </button>
+          <div id="faq1" class="hidden p-4 bg-purple-50">
+            <p>LinkHive allows you to create a personalized cards for your online profiles and projects.</p>
+          </div>
+        </div>
+        <div class="mb-4">
+          <button data-toggle="faq2" class="p-4 bg-purple-100 w-full text-left font-semibold rounded-lg">
+            How do I create a LinkHive page?
+          </button>
+          <div id="faq2" class="hidden p-4 bg-purple-50">
+            <p>Sign up, customize your profile, and add links. Get a card to share everywhere.</p>
+          </div>
+        </div>
+        <div class="mb-4">
+          <button data-toggle="faq3" class="p-4 bg-purple-100 w-full text-left font-semibold rounded-lg">
+            Is LinkHive free to use?
+          </button>
+          <div id="faq3" class="hidden p-4 bg-purple-50">
+            <p>Yes! The free plan offers basic features. Premium plans include more customization and analytics.But currently it's free.</p>
+          </div>
+        </div>
+        <div>
+          <button data-toggle="faq4" class="p-4 bg-purple-100 w-full text-left font-semibold rounded-lg">
+            Can I customize my LinkHive page?
+          </button>
+          <div id="faq4" class="hidden p-4 bg-purple-50">
+            <p>Yes, you can choose themes, colors for your cards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-purple-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2024 LinkHive. All Rights Reserved.</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
